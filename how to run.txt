@@ -1,0 +1,12 @@
+# Terminal 1 — MongoDB (Launch docker desktop before running the code)
+docker run -d -p 27017:27017 mongo:latest
+
+# Terminal 2 — Backend
+cd careerpath-india/backend
+mvn spring-boot:run
+
+# Terminal 3 — Frontend  
+cd careerpath-india/career-guidance-frontend
+npm install && npm run dev
+
+

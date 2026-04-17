@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: careerpath_mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      # Named volume — data survives container restarts/removal
+      - careerpath_mongo_data:/data/db
+      - careerpath_mongo_config:/data/configdb
+    environment:
+      # Optional: remove these lines if you don't want auth (simpler for dev)
+      # MONGO_INITDB_ROOT_USERNAME: admin
+      # MONGO_INITDB_ROOT_PASSWORD: secretpassword
+      MONGO_INITDB_DATABASE: careerpathdb
+
+volumes:
+  careerpath_mongo_data:
+    name: careerpath_mongo_data
+  careerpath_mongo_config:
+    name: careerpath_mongo_config

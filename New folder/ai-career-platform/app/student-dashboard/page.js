@@ -1,0 +1,26 @@
+"use client";
+
+import Navbar from "../../components/Navbar";
+
+export default function StudentDashboard() {
+
+  return (
+    <div>
+
+      <Navbar />
+
+      <div className="p-6">
+
+        <h1 className="text-3xl font-bold">
+          Student Dashboard
+        </h1>
+
+        <p className="text-gray-600 mt-2">
+          Welcome to your dashboard.
+        </p>
+
+      </div>
+
+    </div>
+  );
+}
